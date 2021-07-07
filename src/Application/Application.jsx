@@ -9,10 +9,18 @@ import PublicRoute from 'components/PublicRoute';
 
 import routes from 'routes';
 
-const HomeView = lazy(() => import('views/HomeView'));
-const RegisterView = lazy(() => import('views/RegisterView'));
-const ContactsView = lazy(() => import('views/ContactsView'));
-const LoginView = lazy(() => import('views/LoginView'));
+const HomeView = lazy(() =>
+  import('views/HomeView' /* webpackChunkName: "home" */),
+);
+const RegisterView = lazy(() =>
+  import('views/RegisterView' /* webpackChunkName: "register" */),
+);
+const ContactsView = lazy(() =>
+  import('views/ContactsView' /* webpackChunkName: "contacts" */),
+);
+const LoginView = lazy(() =>
+  import('views/LoginView' /* webpackChunkName: "login" */),
+);
 
 class Application extends Component {
   componentDidMount() {
