@@ -7,7 +7,7 @@ import { authOperations } from 'redux/auth';
 
 const mapStateToProps = state => ({
   name: authSelectors.getUserName(state),
-  avatar: '',
+  email: authSelectors.getUserEmail(state),
 });
 
 const mapDispatchToProps = dispatch => ({

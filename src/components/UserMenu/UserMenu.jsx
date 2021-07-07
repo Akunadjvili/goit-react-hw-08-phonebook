@@ -22,22 +22,18 @@ const useStyles = makeStyles(theme => ({
     width: theme.spacing(4),
     height: theme.spacing(4),
   },
-  logout: {
-    padding: '4px',
-    backgroundColor: 'transparent',
-    borderRadius: '4px',
-    cursor: 'pointer',
-  },
 }));
 
-const UserMenu = ({ avatar, name, logoutHandler }) => {
+const UserMenu = ({ name, email, logoutHandler }) => {
   const classes = useStyles();
   return (
     <Box component="div" className={classes.box}>
-      <Avatar src={avatar} className={classes.avatar} alt="Avatar" />
+      <Avatar src={''} className={classes.avatar} alt="Avatar" />
       <Box component="div" className={classes.controls}>
-        <span className={classes.name}>{name}</span>
-        <Button  color="primary" className={classes.logout} onClick={logoutHandler}>
+        <span className={classes.name}>
+          {email} ({name})
+        </span>
+        <Button color="primary" onClick={logoutHandler}>
           Sign Out
         </Button>
       </Box>
